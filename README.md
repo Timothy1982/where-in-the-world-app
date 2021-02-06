@@ -2,6 +2,8 @@
 
 ![Screenshot of the WhereInTheWorldApp](/preview.png)
 
+Live preview of the App: [https://where-in-the-world-app.vercel.app/](https://where-in-the-world-app.vercel.app/)
+
 A little app that lists all countries. You can filter them by region or search by name.
 As a little bonus you can switch the theme between a light and a dark theme.
 
