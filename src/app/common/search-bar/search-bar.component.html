@@ -1,0 +1,19 @@
+<form [formGroup]="searchForm">
+  <div class="search-bar">
+    <div class="search-bar-search">
+      <input
+        type="text"
+        formControlName="searchTerm"
+        (input)="filterCountries()"
+      />
+    </div>
+    <div class="search-bar-filter">
+      <select name="region" formControlName="region" (change)="filterRegions()">
+        <option value="">Filter by Region</option>
+        <option *ngFor="let region of regions" [ngValue]="region">
+          {{ region }}
+        </option>
+      </select>
+    </div>
+  </div>
+</form>

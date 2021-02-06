@@ -1,0 +1,15 @@
+<app-search-bar
+  (filterByRegion)="filterCountries($event)"
+  (filterByTerm)="filterByTerm($event)"
+></app-search-bar>
+
+<div class="countries-list">
+  <app-loading *ngIf="isLoading"></app-loading>
+  <ng-container *ngIf="!isLoading">
+    <app-country-list-element
+      *ngFor="let country of countryListDisplay"
+      [country]="country"
+      (click)="showCountry(country)"
+    ></app-country-list-element>
+  </ng-container>
+</div>

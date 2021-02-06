@@ -1,0 +1,26 @@
+.countries-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-page-size);
+  padding: 0 var(--spacing-small);
+  margin: 0 auto;
+}
+
+app-country-list-element {
+  flex-basis: 100%;
+  margin-bottom: var(--spacing-large);
+}
+
+@media screen and (min-width: 600px) {
+  .countries-list {
+    padding: 0 var(--spacing-large);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  app-country-list-element {
+    flex-basis: 18.85em;
+  }
+}

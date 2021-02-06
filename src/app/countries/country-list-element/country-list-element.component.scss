@@ -1,0 +1,44 @@
+.country-box {
+  width: 100%;
+  background-color: var(--theme-elements);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--theme-box-shadow);
+  overflow: hidden;
+  transition: transform 200ms ease, box-shadow 200ms ease,
+    background-color 200ms ease;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: var(--theme-box-shadow-hov);
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  &-flag {
+    display: flex;
+    height: 12.3em;
+    overflow: hidden;
+    background-color: var(--theme-input);
+
+    img {
+      align-self: center;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &-details {
+    padding: var(--spacing-medium) var(--spacing-medium)
+      calc(1.75 * var(--spacing-medium));
+
+    h3 {
+      margin: 0 0 var(--spacing-small);
+      font-weight: 800;
+    }
+
+    strong {
+      font-weight: 800;
+    }
+  }
+}

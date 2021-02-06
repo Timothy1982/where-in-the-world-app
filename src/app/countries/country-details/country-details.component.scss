@@ -1,0 +1,136 @@
+.country-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--max-page-size);
+  padding: 0 var(--spacing-small) var(--spacing-medium);
+  margin: 0 auto;
+}
+
+.country-actions,
+.country-info {
+  width: 100%;
+}
+
+.country-actions {
+  padding: var(--spacing-medium) 0;
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+
+  &-flag,
+  &-details {
+    width: 100%;
+  }
+
+  &-flag {
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &-details {
+    padding: var(--spacing-small);
+
+    h2 {
+      font-size: 2em;
+    }
+
+    &__lists {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-list {
+      list-style-type: none;
+      margin: 0 0 var(--spacing-medium);
+      padding: 0;
+
+      // &:first-of-type {
+      //   margin-right: var(--spacing-large);
+      // }
+
+      li {
+        line-height: 200%;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    &-border {
+      display: flex;
+      flex-direction: column;
+      margin-top: var(--spacing-medium);
+
+      &__elements {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: var(--spacing-small);
+      }
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: inherit;
+  padding: calc(var(--spacing-small) / 2) calc(var(--spacing-small) * 1.5);
+  margin: 0 var(--spacing-small) var(--spacing-small) 0;
+  background-color: var(--theme-elements);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--theme-box-shadow-large);
+  transition: box-shadow 200ms ease;
+
+  &:hover {
+    box-shadow: var(--theme-box-shadow-hov);
+  }
+}
+
+.btn-big {
+  padding: calc(var(--spacing-small) / 2) calc(var(--spacing-small) * 2);
+
+  fa-icon {
+    padding-right: calc(var(--spacing-small) / 2);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .country {
+    &-container {
+      padding: 0 var(--spacing-large) var(--spacing-large);
+    }
+  }
+  .country-info {
+    &-details {
+      &__lists {
+        flex-direction: row;
+      }
+
+      &-list {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .country-info {
+    flex-direction: row;
+    gap: var(--spacing-large);
+  }
+
+  .country-actions {
+    padding: var(--spacing-large) 0;
+  }
+}

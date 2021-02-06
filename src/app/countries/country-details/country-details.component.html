@@ -1,0 +1,62 @@
+<div class="country-container" *ngIf="!isLoading">
+  <div class="country-actions">
+    <a routerLink="/" (click)="navigateBack()" class="btn btn-big"
+      ><fa-icon [icon]="backIcon"></fa-icon> Back</a
+    >
+  </div>
+  <div class="country-info" *ngIf="!error.isError">
+    <div class="country-info-flag">
+      <img [src]="country.flag" alt="" />
+    </div>
+    <div class="country-info-details">
+      <h2>{{ country.name }}</h2>
+      <div class="country-info-details__lists">
+        <ul class="country-info-details-list">
+          <li><strong>Native Name:</strong> {{ country.nativeName }}</li>
+          <li><strong>Population:</strong> {{ country.population }}</li>
+          <li><strong>Region:</strong> {{ country.region }}</li>
+          <li><strong>Sub Region:</strong> {{ country.subregion }}</li>
+          <li><strong>Capital:</strong> {{ country.capital }}</li>
+        </ul>
+        <ul class="country-info-details-list">
+          <li>
+            <strong>Top Level Domain: </strong>
+            <ng-container *ngFor="let domain of country.topLevelDomain"
+              >{{ domain }}
+            </ng-container>
+          </li>
+          <li>
+            <strong>Currencies: </strong>
+            <ng-container *ngFor="let currency of country.currencies"
+              >{{ currency.name }}
+            </ng-container>
+          </li>
+          <li>
+            <strong>Languages: </strong>
+            <ng-container
+              *ngFor="let language of country.languages; last as isLast"
+              >{{ language.name }}<span *ngIf="!isLast">, </span>
+            </ng-container>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="country-info-details-border"
+        *ngIf="country.borders.length >= 1"
+      >
+        <div><strong>Border Countries:</strong></div>
+        <div class="country-info-details-border__elements">
+          <ng-container *ngFor="let country of borderCountries">
+            <a [routerLink]="['/country', country.alpha3Code]" class="btn">{{
+              country.name
+            }}</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-loading *ngIf="isLoading"></app-loading>
+
+<app-error-msg *ngIf="error.isError" [err]="error"></app-error-msg>

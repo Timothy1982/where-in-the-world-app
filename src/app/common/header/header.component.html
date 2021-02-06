@@ -1,0 +1,16 @@
+<div class="header-container">
+  <div class="header-row">
+    <div class="header-logo">
+      <a routerLink="/">Where In The World?</a>
+    </div>
+    <div class="header-theme-box">
+      <span (click)="toggleTheme()"
+        ><ng-container *ngIf="activeTheme === 'light'"
+          ><fa-icon [icon]="icons.moon"></fa-icon> Dark Mode</ng-container
+        ><ng-container *ngIf="activeTheme === 'dark'"
+          ><fa-icon [icon]="icons.sun"></fa-icon> Light Mode</ng-container
+        ></span
+      >
+    </div>
+  </div>
+</div>
